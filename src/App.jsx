@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useState} from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [displayValue, setDisplayValue] = useState('0')
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+		<div className='container'>
+			<h1>calculator</h1>
+			<div className='display'>
+				<div className='entry'>{displayValue}</div>
+			</div>
+			<div className='buttons'>
+				<button className='operator clear' onClick={() => handleClear()}>
+					AC
+				</button>
+				<button className='operator' onClick={() => handleClick('(')}>
+					(
+				</button>
+				<button className='operator' onClick={() => handleClick(')')}>
+					)
+				</button>
+				<button className='operator' onClick={() => handleClick('÷')}>
+					÷
+				</button>
+				<button className='number' onClick={() => handleClick('7')}>
+					7
+				</button>
+				<button className='number' onClick={() => handleClick('8')}>
+					8
+				</button>
+				<button className='number' onClick={() => handleClick('9')}>
+					9
+				</button>
+				<button className='operator' onClick={() => handleClick('×')}>
+					×
+				</button>
+				<button className='number' onClick={() => handleClick('4')}>
+					4
+				</button>
+				<button className='number' onClick={() => handleClick('5')}>
+					5
+				</button>
+				<button className='number' onClick={() => handleClick('6')}>
+					6
+				</button>
+				<button className='operator' onClick={() => handleClick('-')}>
+					-
+				</button>
+				<button className='number' onClick={() => handleClick('1')}>
+					1
+				</button>
+				<button className='number' onClick={() => handleClick('2')}>
+					2
+				</button>
+				<button className='number' onClick={() => handleClick('3')}>
+					3
+				</button>
+				<button className='operator' onClick={() => handleClick('+')}>
+					+
+				</button>
+				<button className='operator' onClick={() => handleClick('.')}>
+					.
+				</button>
+				<button className='number' onClick={() => handleClick('0')}>
+					0
+				</button>
+				<button className='operator equals' onClick={() => handleClick('=')}>
+					=
+				</button>
+			</div>
+		</div>
+	)
 }
 
 export default App
