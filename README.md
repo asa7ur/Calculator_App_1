@@ -1,3 +1,3 @@
 # Calculator App
 
-A Calculator App using Reactgit add
+A Calculator App using Reactgit
