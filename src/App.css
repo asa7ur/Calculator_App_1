@@ -1,42 +1,105 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url(https://db.onlinewebfonts.com/c/1b40984d7a10bcae004877dc48f4cc8f?family=DigitalICG);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Orbitron', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+	background-color: #2c3e50;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+	width: 300px;
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	border-radius: 10px;
+  	box-shadow: 0px 0px 20px 0px #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.container h1 {
+	text-align: center;
+	font-size: 1.5rem;
+	padding-bottom: 5px;
+  text-transform: uppercase;
 }
 
-.card {
-  padding: 2em;
+.container .display {
+	width: 250px;
+	height: 50px;
+	background-color: #363636;
+	border: 2px solid #fff;
+	border-radius: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+.container .display .entry {
+	font-family: 'DigitalICG';
+	font-size: 2.5rem;
+	float: right;
+	margin-top: 3px;
+}
+
+.auto-scaling-text {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.container .buttons {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 100%;
+}
+
+.container .buttons .equals {
+	grid-column: span 2;
+}
+
+.container .buttons button {
+	height: 60px;
+	color: white;
+	font-size: 1.3rem;
+	border: 1px solid black;
+	transition: background-color 0.05s ease-in, transform 0.05s ease-in-out;
+}
+
+.operator {
+	background-color: #282828;
+}
+
+.operator:active {
+	background-color: #181818;
+	transform: scale(0.97);
+}
+
+.number {
+	background-color: #363636;
+}
+
+.number:active {
+	background-color: #212121;
+	transform: scale(0.97);
+}
+
+.clear,
+.equals {
+	background-color: #01a0e2;
+}
+
+.clear:active,
+.equals:active {
+	background-color: #017baf;
+	transform: scale(0.97);
 }
