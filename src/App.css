@@ -41,6 +41,7 @@ body {
 	align-items: flex-end;
 	justify-content: space-around;
 	width: 250px;
+	min-height: 88px;
 	background-color: #363636;
 	border: 2px solid #fff;
 	border-radius: 5px;

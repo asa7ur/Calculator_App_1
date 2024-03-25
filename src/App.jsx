@@ -1,13 +1,17 @@
 import { useReducer } from 'react'
-import OperationButton from './OperationButton'
-import DigitButton from './DigitButton'
-import reducer from './reducer'
+import OperationButton from './components/OperationButton'
+import DigitButton from './components/DigitButton'
+import reducer from './components/reducer'
+import { ACTIONS } from './components/Actions'
 import './App.css'
 
 function App() {
 	const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
 		reducer,
-		{}
+		{
+			currentOperand: '0',
+			previousOperand: null,
+		}
 	)
 
 	return (
@@ -20,8 +24,18 @@ function App() {
 				<div className='current-operand'>{currentOperand}</div>
 			</div>
 			<div className='buttons'>
-				<button className='operator span-two'>AC</button>
-				<button className='operator'>DEL</button>
+				<button
+					className='operator span-two'
+					onClick={() => dispatch({ type: ACTIONS.CLEAR })}
+				>
+					AC
+				</button>
+				<button
+					className='operator'
+					onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}
+				>
+					DEL
+				</button>
 				<OperationButton operation={'÷'} dispatch={dispatch} />
 				<DigitButton digit={'7'} dispatch={dispatch} />
 				<DigitButton digit={'8'} dispatch={dispatch} />
@@ -37,7 +51,12 @@ function App() {
 				<OperationButton operation={'+'} dispatch={dispatch} />
 				<DigitButton digit={'.'} dispatch={dispatch} />
 				<DigitButton digit={'0'} dispatch={dispatch} />
-				<button className='operator span-two'>=</button>
+				<button
+					className='operator span-two'
+					onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
+				>
+					=
+				</button>
 			</div>
 		</div>
 	)
