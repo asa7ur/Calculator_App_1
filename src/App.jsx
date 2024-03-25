@@ -59,7 +59,7 @@ function App() {
 				<button className='operator' onClick={() => handleClick('+')}>
 					+
 				</button>
-				<button className='operator' onClick={() => handleClick('.')}>
+				<button className='number' onClick={() => handleClick('.')}>
 					.
 				</button>
 				<button className='number' onClick={() => handleClick('0')}>
