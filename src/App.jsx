@@ -1,24 +1,19 @@
-import {useState} from 'react'
 import './App.css'
 
 function App() {
-  const [displayValue, setDisplayValue] = useState('0')
-
   return (
 		<div className='container'>
 			<h1>calculator</h1>
 			<div className='display'>
-				<div className='entry'>{displayValue}</div>
+				<div className='previous-operand'>123.123</div>
+				<div className='current-operand'>123.123</div>
 			</div>
 			<div className='buttons'>
-				<button className='operator clear' onClick={() => handleClear()}>
+				<button className='operator clear span-two' onClick={() => handleClear()}>
 					AC
 				</button>
 				<button className='operator' onClick={() => handleClick('(')}>
-					(
-				</button>
-				<button className='operator' onClick={() => handleClick(')')}>
-					)
+					DEL
 				</button>
 				<button className='operator' onClick={() => handleClick('÷')}>
 					÷
@@ -65,7 +60,7 @@ function App() {
 				<button className='number' onClick={() => handleClick('0')}>
 					0
 				</button>
-				<button className='operator equals' onClick={() => handleClick('=')}>
+				<button className='operator span-two' onClick={() => handleClick('=')}>
 					=
 				</button>
 			</div>

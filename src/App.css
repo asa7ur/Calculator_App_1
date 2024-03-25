@@ -25,35 +25,37 @@ body {
 	align-items: center;
 	padding: 10px;
 	border-radius: 10px;
-  	box-shadow: 0px 0px 20px 0px #000;
+	box-shadow: 0px 0px 20px 0px #000;
 }
 
 .container h1 {
 	text-align: center;
 	font-size: 1.5rem;
 	padding-bottom: 5px;
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .container .display {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 	width: 250px;
-	height: 50px;
 	background-color: #363636;
 	border: 2px solid #fff;
 	border-radius: 5px;
 }
 
-.container .display .entry {
+.container .display .previous-operand {
 	font-family: 'DigitalICG';
-	font-size: 2.5rem;
-	float: right;
+	font-size: 1.5rem;
 	margin-top: 3px;
+	color: rgba(255, 255, 255, 0.7);
 }
 
-.auto-scaling-text {
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
+.container .display .current-operand {
+	font-family: 'DigitalICG';
+	font-size: 2.5rem;
+	margin-top: 3px;
 }
 
 .container .buttons {
@@ -63,8 +65,9 @@ body {
 	width: 100%;
 }
 
-.container .buttons .equals {
+.container .buttons .span-two {
 	grid-column: span 2;
+	background-color: #01a0e2;
 }
 
 .container .buttons button {
@@ -91,11 +94,6 @@ body {
 .number:active {
 	background-color: #212121;
 	transform: scale(0.97);
-}
-
-.clear,
-.equals {
-	background-color: #01a0e2;
 }
 
 .clear:active,
